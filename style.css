@@ -1,0 +1,72 @@
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+}
+
+.site-header {
+  background: #123b43;
+  color: #fff;
+  padding: 42px 20px 46px;
+}
+
+.header-content { max-width: 700px; margin: 0 auto; }
+.eyebrow { margin: 0 0 8px; color: #b8d9d9; font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+h1 { margin: 0; font-size: clamp(2rem, 6vw, 3rem); line-height: 1.1; letter-spacing: -.045em; }
+.tagline { margin: 12px 0 0; color: #d8e8e8; }
+
+main { width: min(100% - 32px, 700px); margin: 30px auto 42px; flex: 1; }
+.section-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 24px; margin-bottom: 20px; box-shadow: 0 5px 18px rgb(24 56 64 / 4%); }
+h2 { margin: 0 0 18px; font-size: 1.25rem; letter-spacing: -.02em; }
+
+#note-form { display: flex; align-items: end; gap: 12px; }
+.form-field { display: flex; flex-direction: column; gap: 6px; }
+.note-field { flex: 1; min-width: 0; }
+.category-field { width: 145px; flex-shrink: 0; }
+label { color: #394b54; font-size: .88rem; font-weight: 650; }
+input, select { width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid #cbd8dc; border-radius: 8px; background: #fff; color: var(--ink); font: inherit; }
+input:focus, select:focus, button:focus-visible { outline: 3px solid rgb(8 127 140 / 22%); outline-offset: 2px; border-color: var(--teal); }
+button { font: inherit; cursor: pointer; transition: background-color .16s ease, transform .16s ease; }
+.primary-button { min-height: 44px; padding: 10px 16px; border: 1px solid #087f8c; border-radius: 8px; background: #087f8c; color: #fff; font-weight: 700; white-space: nowrap; }
+.primary-button:hover { background: #066570; transform: translateY(-1px); }
+.error-message { min-height: 1.4em; margin: 10px 0 0; color: #b42332; font-size: .9rem; }
+
+.notes-heading-row { display: flex; justify-content: space-between; align-items: start; gap: 12px; }
+.notes-heading-row h2 { margin-bottom: 3px; }
+.section-description { margin: 0 0 18px; color: var(--muted); font-size: .9rem; }
+.text-button { padding: 5px 0; border: 0; background: transparent; color: #a12a36; font-size: .9rem; font-weight: 700; }
+.text-button:hover { color: #751b25; text-decoration: underline; }
+.search-label { display: block; margin-bottom: 6px; }
+.search-input { margin-bottom: 14px; }
+.note-count { margin: 0 0 12px; color: var(--muted); font-size: .88rem; }
+#notes-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.note-card { padding: 15px 16px; border: 1px solid var(--border); border-left: 4px solid #087f8c; border-radius: 10px; margin: 0; background: #fff; overflow-wrap: anywhere; }
+.category-personal { border-left-color: #087f8c; }
+.category-work { border-left-color: #8d3039; }
+.category-study { border-left-color: #356ac3; }
+.note-topline { display: flex; justify-content: space-between; align-items: start; gap: 12px; }
+.note-text { margin: 0; white-space: pre-wrap; }
+.category-label { display: inline-block; margin-top: 10px; padding: 3px 8px; border-radius: 999px; background: #e2f3f3; color: #075e67; font-size: .75rem; font-weight: 750; }
+.category-work .category-label { background: #f8e8e9; color: #812630; }
+.category-study .category-label { background: #e9efff; color: #2a54a1; }
+.note-date { display: block; margin-top: 8px; color: var(--muted); font-size: .78rem; }
+.delete-button { flex-shrink: 0; padding: 5px 8px; border: 1px solid #e5c5c8; border-radius: 7px; background: #fff; color: #a12a36; font-size: .82rem; font-weight: 650; }
+.delete-button:hover { background: #fff0f1; }
+.empty-message { padding: 18px 12px; border: 1px dashed #ccd9dc; border-radius: 10px; color: var(--muted); text-align: center; }
+footer { padding: 22px 16px; color: #738087; text-align: center; font-size: .84rem; }
+footer p { margin: 0; }
+
+@media (max-width: 600px) {
+  .site-header { padding: 32px 20px 36px; }
+  main { width: min(100% - 24px, 700px); margin-top: 18px; }
+  .section-card { padding: 18px; border-radius: 13px; }
+  #note-form { flex-direction: column; align-items: stretch; }
+  .category-field { width: 100%; }
+  .primary-button { width: 100%; }
+  .notes-heading-row { align-items: center; }
+}
